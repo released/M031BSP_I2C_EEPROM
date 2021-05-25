@@ -10,13 +10,13 @@
 //#define DEBUG_LOG_SLAVE_LV1
 //#define DEBUG_LOG_SLAVE_LV2
 
-//#define MASTER_I2C						  		(I2C0)
-//#define MASTER_I2C_IRQn						  	(I2C0_IRQn)
-//#define I2Cx_Master_IRQHandler					(I2C0_IRQHandler)
+#define MASTER_I2C						  		(I2C0)
+#define MASTER_I2C_IRQn						  	(I2C0_IRQn)
+#define I2Cx_Master_IRQHandler					(I2C0_IRQHandler)
 
- #define MASTER_I2C						  		(I2C1)
- #define MASTER_I2C_IRQn						  	(I2C1_IRQn)
- #define I2Cx_Master_IRQHandler					(I2C1_IRQHandler)
+//#define MASTER_I2C						  		(I2C1)
+//#define MASTER_I2C_IRQn						  	(I2C1_IRQn)
+//#define I2Cx_Master_IRQHandler					(I2C1_IRQHandler)
 
 #define I2C_WR                  					(0x00)
 #define I2C_RD                  					(0x01)
@@ -54,10 +54,10 @@
 #define GC_MODE_DATA_NACK                  	(0x98)
 #define ADDRESS_TRANSMIT_ARBITRATION_LOST    	(0xB0)
 
-void I2Cx_WriteSingleToSlaveIRQ(uint8_t address,uint8_t reg, uint8_t *data);
-void I2Cx_ReadSingleToSlaveIRQ(uint8_t address, uint8_t reg,uint8_t *data);
+//void I2Cx_WriteSingleToSlaveIRQ(uint8_t address,uint8_t reg, uint8_t *data);
+//void I2Cx_ReadSingleToSlaveIRQ(uint8_t address, uint8_t reg,uint8_t *data);
 
-void I2Cx_WriteMultiToSlaveIRQ(uint8_t address,uint8_t reg,uint8_t *data,uint16_t len);
-void I2Cx_ReadMultiFromSlaveIRQ(uint8_t address,uint8_t reg,uint8_t *data,uint16_t len);
+void I2Cx_WriteMultiToSlaveIRQ(uint8_t address,uint16_t reg,uint8_t *data,uint16_t len);
+void I2Cx_ReadMultiFromSlaveIRQ(uint8_t address,uint16_t reg,uint8_t *data,uint16_t len);
 
 
